@@ -12,13 +12,21 @@
         }
         .refresh{
             display: flex;
-            font-size: 4rem;
+            position: relative;
             justify-content: center;
             margin-bottom:0 ;
+            
         }
         .refresh>h1{
             margin-bottom: 0;
             font-family: "Lobster",cursive;
+            font-size: 4rem;
+            
+            
+        }
+        .refresh>p{
+            position: absolute;
+            top:110px;
         }
         .Players{
             font-size: 3rem;
@@ -41,7 +49,8 @@
 </head>
 <body>
     <div class="refresh">
-        <h1 >Refresh Me</h1>
+        <h1 >Refresh To Roll The Dice</h1>
+        <p></p>
     </div>
     <div class="Players">
         <div class="Player1">
@@ -61,6 +70,8 @@
 
     <script>
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        
+        document.querySelector(".refresh>p").innerHTML="<p>Refresh Again To Roll the Dice</p>"
         var randomNumber1=Math.floor(1+ Math.random()*6);
         var randomNumber2=Math.floor(1+ Math.random()*6);
         console.log(randomNumber1);
