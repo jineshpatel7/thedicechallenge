@@ -28,6 +28,14 @@
             position: absolute;
             top:110px;
         }
+        .refresh>button{
+            position: absolute;
+            top: 10.5rem;
+            font-size: 1rem;
+            color: blueviolet;
+            width: 8rem;
+            height: 30px;
+        }
         .Players{
             font-size: 3rem;
             display: flex;
@@ -49,8 +57,9 @@
 </head>
 <body>
     <div class="refresh">
-        <h1 >Refresh To Roll The Dice</h1>
+        <h1 >Refresh To Roll The Dice Or Click the button</h1>
         <p></p>
+        <button onclick=rollDice()>Roll The Dice</button>
     </div>
     <div class="Players">
         <div class="Player1">
@@ -70,8 +79,11 @@
 
     <script>
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            rollDice();
+        }
+        function rollDice(){
         
-        document.querySelector(".refresh>p").innerHTML="<p>Refresh Again To Roll the Dice</p>"
+        document.querySelector(".refresh>p").innerHTML="<p>Refresh Again To Roll the Dice or click the button -></p>"
         var randomNumber1=Math.floor(1+ Math.random()*6);
         var randomNumber2=Math.floor(1+ Math.random()*6);
         console.log(randomNumber1);
