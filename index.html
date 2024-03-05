@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dice Challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+    <style>
+        *{
+            background-color: #393E46;
+            color: cyan;
+        }
+        .refresh{
+            display: flex;
+            font-size: 4rem;
+            justify-content: center;
+            margin-bottom:0 ;
+        }
+        .refresh>h1{
+            margin-bottom: 0;
+            font-family: "Lobster",cursive;
+        }
+        .Players{
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-family: "Indie Flower", cursive;
+        }
+        .Player1{
+            margin-right: 50px;
+            /* text-align: center; */
+            
+        }
+        footer>h3{
+            color: lightgoldenrodyellow;
+            text-align: center;
+            font-family: "Lobster", cursive;
+        }
+    </style>
+</head>
+<body>
+    <div class="refresh">
+        <h1 >Refresh Me</h1>
+    </div>
+    <div class="Players">
+        <div class="Player1">
+            <h3>Player1</h3>
+            <img src="images/dice6.png" alt="">
+        </div>
+        
+        <div class="Player2">
+            <h3>Player2</h3>
+            <img src='images/dice6.png' alt="">
+        </div>
+    </div>    
+
+    <footer>
+        <h3>@Jinesh Patel</h3>
+    </footer>
+
+    <script>
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        var randomNumber1=Math.floor(1+ Math.random()*6);
+        var randomNumber2=Math.floor(1+ Math.random()*6);
+        console.log(randomNumber1);
+        console.log(randomNumber2);
+
+        var randomNumberImageSource1= "images/dice" + randomNumber1 + ".png";
+        
+        var randomNumberImageSource2= "images/dice" + randomNumber2 + ".png";
+        
+        document.querySelector(".Player1>img").setAttribute("src",randomNumberImageSource1);
+        document.querySelector(".Player2>img").setAttribute("src",randomNumberImageSource2);
+
+        if(randomNumber1>randomNumber2){
+            document.querySelector("h1").innerHTML="🚩 Player1 wins";
+        }
+        else if(randomNumber1<randomNumber2){
+            document.querySelector("h1").innerHTML="Player2 wins 🚩";
+        }
+        else if(randomNumber1==randomNumber2){
+            document.querySelector("h1").innerHTML="Draw";
+        }
+        
+    }
+    </script>
+</body>
+</html>
